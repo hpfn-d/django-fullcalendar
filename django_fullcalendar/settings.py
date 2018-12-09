@@ -53,10 +53,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'test_without_migrations',
     'django_fullcalendar.core',
     'django_fullcalendar.fullcalendar',
-    'test_without_migrations',
-    'django_extensions',
 )
 
 MIDDLEWARE = [
