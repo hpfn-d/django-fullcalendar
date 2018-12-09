@@ -1,6 +1,6 @@
 from django.conf import settings
 
-# django-fullcalendar static file location defaults to FullCalendar default 
+# django-fullcalendar static file location defaults to FullCalendar default
 # folder structure, expected to be under the STATIC_URL
 
 # FULLCALENDAR_DEFAULTS = {

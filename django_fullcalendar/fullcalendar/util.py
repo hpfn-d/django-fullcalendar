@@ -1,6 +1,8 @@
 # coding: utf-8
 import json
 import re
+
+
 def date_handler(obj):
     """
     Handles JSON serialization for datetime values
@@ -11,18 +13,19 @@ def date_handler(obj):
 def convert_field_names(event_list):
     """
     Converts atribute names from Python code convention to the
-    attribute names used by FullCalendar 
+    attribute names used by FullCalendar
     """
-    # @cuducos tip 
+    # @cuducos tip
     return [{snake_to_camel_case(k): v for k, v in event.items()}
             for event in event_list]
+
 
 """
     n_l = list()
     for event in event_list:
         new = {snake_to_camel_case(k): v for k, v in event.items()}
         n_l.append(new)
-    
+
     return n_l
 """
 """
@@ -36,30 +39,33 @@ def convert_field_names(event_list):
     return new_l  # event_list
 """
 
+
 def snake_to_camel_case(s):
     """
     Converts strings from 'snake_case' (Python code convention)
     to CamelCase
     """
     new_string = s
-    
+
     # @cuducos tips
     for group in re.findall('[a-z]_[a-z]', new_string):
         replace = group.replace(group[-1], group[-1].upper())[::2]
         new_string = new_string.replace(group, replace)
-     
+
     return new_string
+
+
 """
     leading_count = 0
     while new_string.find('_') == 0:
         new_string = new_string[1:]
         leading_count +=1
-    
+
     trailing_count = 0
     while new_string.rfind('_') == len(new_string) - 1:
         new_string = new_string[:-1]
         trailing_count +=1
-    
+
     new_string = ''.join([word.title() for word in new_string.split('_')])
     leading_underscores = '_' * leading_count
     trailing_underscores = '_' * trailing_count
@@ -82,7 +88,7 @@ def calendar_options(event_url, options):
 
     This function receives two strings. event_url is the url that returns a JSON array containing
     the calendar events. options is a JSON string with all the other options.
-    """    
+    """
     event_url_option = 'events: "%s"' % (event_url,)
     s = options.strip()
     if s is not None and '{' in s:

@@ -6,7 +6,7 @@ class CalendarEvent(models.Model):
     """
     The event set a record for an activity that will
     be scheduled at a specified date and time.
-    
+
     It could be on a date and time to start and end,
     but can also be all day.
     """
