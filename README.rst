@@ -4,6 +4,10 @@ The setup.py file is untouched:
 
     packages=['fullcalendar', 'fullcalendar.templatetags',]
 
+Django 2.1.4
+Python 3.7
+FullCalendar 3.9.0
+
 ===================
 django-fullcalendar
 ===================
