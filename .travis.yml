@@ -1,0 +1,14 @@
+language: python
+python:
+ - 3.7
+install:
+ - cp contrib/env-sample .env
+ - pip install -q -r requirements-dev.txt codecov
+script:
+ - isort --recursive --check-only --diff django_fullcalendar
+ - flake8 .
+ - coverage run manage.py test
+ - coverage report
+after_success:
+ - codecov
+

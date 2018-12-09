@@ -7,5 +7,9 @@ mccabe==0.6.1
 pycodestyle==2.4.0
 pyflakes==2.0.0:x
 
+coverage==4.5.2
+
 django-extensions==0.4
 six==1.11.0
+
+-r requirements.txt

@@ -1,0 +1,6 @@
+[run]
+source = django_fullcalendar
+omit =
+    django_fullcalendar/fullcalendar/migrations/*.py
+    django_fullcalendar/fullcalendar/tests/*.py
+    django_fullcalendar/settings.py
