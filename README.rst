@@ -1,3 +1,9 @@
+Fork with a complete different directory tree.
+The setup.py file is untouched:
+::
+
+    packages=['fullcalendar', 'fullcalendar.templatetags',]
+
 ===================
 django-fullcalendar
 ===================
