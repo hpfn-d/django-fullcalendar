@@ -1,6 +1,6 @@
 # coding: utf-8
 import json
-
+import re
 def date_handler(obj):
     """
     Handles JSON serialization for datetime values
@@ -13,11 +13,28 @@ def convert_field_names(event_list):
     Converts atribute names from Python code convention to the
     attribute names used by FullCalendar 
     """
-    for event in event_list:
-        for key in event.keys():
-            event[snake_to_camel_case(key)] = event.pop(key)
-    return event_list
+    # @cuducos tip 
+    return [{snake_to_camel_case(k): v for k, v in event.items()}
+            for event in event_list]
 
+"""
+    n_l = list()
+    for event in event_list:
+        new = {snake_to_camel_case(k): v for k, v in event.items()}
+        n_l.append(new)
+    
+    return n_l
+"""
+"""
+    new_l = list()
+    for event in event_list:
+        new_d = dict()
+        for key, v in event.items():  # keys():
+        #event[snake_to_camel_case(key)] = event.pop(key)
+            new_d[snake_to_camel_case(key)] = v  # event.pop(key)
+        new_l.append(new_d)
+    return new_l  # event_list
+"""
 
 def snake_to_camel_case(s):
     """
@@ -25,7 +42,14 @@ def snake_to_camel_case(s):
     to CamelCase
     """
     new_string = s
-
+    
+    # @cuducos tips
+    for group in re.findall('[a-z]_[a-z]', new_string):
+        replace = group.replace(group[-1], group[-1].upper())[::2]
+        new_string = new_string.replace(group, replace)
+     
+    return new_string
+"""
     leading_count = 0
     while new_string.find('_') == 0:
         new_string = new_string[1:]
@@ -40,6 +64,7 @@ def snake_to_camel_case(s):
     leading_underscores = '_' * leading_count
     trailing_underscores = '_' * trailing_count
     return leading_underscores + new_string[0].lower() + new_string[1:] + trailing_underscores
+"""
 
 
 def events_to_json(events_queryset):
