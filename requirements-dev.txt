@@ -5,7 +5,7 @@ django-test-without-migrations==0.6
 flake8==3.6.0
 mccabe==0.6.1
 pycodestyle==2.4.0
-pyflakes==2.0.0:x
+pyflakes==2.0.0
 
 coverage==4.5.2
 
