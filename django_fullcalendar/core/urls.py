@@ -1,11 +1,12 @@
-from django.conf.urls import patterns, include, url
+from django.urls import path
 
-from django.contrib import admin
-admin.autodiscover()
+from django_fullcalendar.core.views import all_events as core_all_events
+from django_fullcalendar.core.views import index as core_index
 
-urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', 'demo.views.index', name='index'),
-    url(r'^all_events/', 'demo.views.all_events', name='all_events'),
-    url(r'^admin/', include(admin.site.urls)),
-)
+app_name = 'core'
+
+urlpatterns = [
+    path('', core_index, name='core_index'),
+    path('all_events/', core_all_events, name='core_all_events'),
+]
+
