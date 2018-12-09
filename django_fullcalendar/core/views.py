@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from fullcalendar.models import CalendarEvent
-from fullcalendar.util import events_to_json, calendar_options
+from django_fullcalendar.fullcalendar.models import CalendarEvent
+from django_fullcalendar.fullcalendar.util import events_to_json, calendar_options
 
 
 # This is just an example for this demo. You may get this value
@@ -37,7 +37,7 @@ OPTIONS = """{  timeFormat: "H:mm",
 
 def index(request):    
     event_url = 'all_events/'
-    return render(request, 'demo/index.html', {'calendar_config_options': calendar_options(event_url, OPTIONS)})
+    return render(request, 'core/index.html', {'calendar_config_options': calendar_options(event_url, OPTIONS)})
 
 def all_events(request):
     events = CalendarEvent.objects.all()
