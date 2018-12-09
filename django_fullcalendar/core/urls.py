@@ -9,4 +9,3 @@ urlpatterns = [
     path('', core_index, name='core_index'),
     path('all_events/', core_all_events, name='core_all_events'),
 ]
-
