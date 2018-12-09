@@ -1,8 +1,9 @@
 from django import template
 from django.utils.safestring import mark_safe
 
-from ..fullcalendar import (css_url, javascript_url, jquery_url,
-                            moments_js_url, print_css_url)
+from ..fullcalendar import (
+    css_url, javascript_url, jquery_url, moments_js_url, print_css_url
+)
 
 register = template.Library()
 

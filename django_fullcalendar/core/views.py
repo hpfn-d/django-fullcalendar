@@ -2,8 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from django_fullcalendar.fullcalendar.models import CalendarEvent
-from django_fullcalendar.fullcalendar.util import (calendar_options,
-                                                   events_to_json)
+from django_fullcalendar.fullcalendar.util import (
+    calendar_options, events_to_json
+)
 
 # This is just an example for this demo. You may get this value
 # from a separate file or anywhere you want
