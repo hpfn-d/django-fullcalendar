@@ -1,6 +1,6 @@
 from django import template
 from django.utils.safestring import mark_safe
-from ..fullcalendar import css_url, print_css_url, javascript_url, jquery_url, jquery_ui_url
+from ..fullcalendar import css_url, print_css_url, javascript_url, jquery_url, moments_js_url
 
 register = template.Library()
 
@@ -30,8 +30,8 @@ def fullcalendar_jquery_url():
     return jquery_url()
 
 @register.simple_tag
-def fullcalendar_jquery_ui_url():
-    return jquery_ui_url()
+def fullcalendar_moments_js_url():
+    return moments_js_url()
 
 @register.simple_tag
 def fullcalendar_css():
@@ -49,8 +49,8 @@ def fullcalendar_jquery():
     return mark_safe("<script src='%s'></script>" % url)
 
 @register.simple_tag
-def fullcalendar_jquery_ui():
-    url = fullcalendar_jquery_ui_url()
+def fullcalendar_moments_js():
+    url = fullcalendar_moments_js_url()
     return mark_safe("<script src='%s'></script>" % url)
 
 @register.simple_tag
