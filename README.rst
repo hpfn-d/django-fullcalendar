@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/hpfn/django-fullcalendar.svg?branch=master)](https://travis-ci.org/hpfn/django-fullcalendar)
 [![codecov](https://codecov.io/gh/hpfn/django-fullcalendar/branch/master/graph/badge.svg)](https://codecov.io/gh/hpfn/django-fullcalendar)
-[![Code Health](https://landscape.io/github/hpfn/django-fullcalendar/master/landscape.svg?style=flat)](https://landscape.io/github/hpfn/django-fullcalendar/master)
+waiting landscape
 
 
 Fork with a complete different directory tree.
